@@ -87,8 +87,7 @@
 
   @media (min-width: $stop-scaling) {
     width: 210px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    line-height: 1.5;
   }
 
   @media (orientation: portrait) {
