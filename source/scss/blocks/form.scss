@@ -52,10 +52,6 @@
     border: 1px solid $c-purple;
   }
 
-  .screen--game.active & {
-    flex-grow: 1;
-  }
-
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
     padding: 0 56px;
@@ -71,14 +67,32 @@
     font-size: 1.6rem;
   }
 
-  @media (max-width: $tablet) and (orientation: landscape) {
-  }
-
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-right: 1rem;
     padding: 0 2.5rem;
     height: 4rem;
     font-size: 1.6rem;
+  }
+
+  .screen--game.active & {
+    flex-grow: 1;
+    width: calc(100% - 24rem);
+
+    @media (min-width: $stop-scaling) {
+      width: calc(100% - 240px);
+    }
+
+    @media (orientation: portrait) {
+      width: calc(100% - 5rem);
+    }
+
+    @media (max-width: $tablet) and (orientation: landscape) {
+      width: calc(100% - 9rem);
+    }
+
+    @media (max-width: $mobile) and (orientation: landscape) {
+      width: calc(100% - 5rem);
+    }
   }
 }
 
