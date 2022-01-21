@@ -1469,9 +1469,6 @@ img {
 .form__field:focus {
   border: 1px solid #a67ee5;
 }
-.screen--game.active .form__field {
-  flex-grow: 1;
-}
 @media (min-width: 2000px) {
   .form__field {
     margin-right: 30px;
@@ -1495,6 +1492,30 @@ img {
     padding: 0 2.5rem;
     height: 4rem;
     font-size: 1.6rem;
+  }
+}
+.screen--game.active .form__field {
+  flex-grow: 1;
+  width: calc(100% - 24rem);
+}
+@media (min-width: 2000px) {
+  .screen--game.active .form__field {
+    width: calc(100% - 240px);
+  }
+}
+@media (orientation: portrait) {
+  .screen--game.active .form__field {
+    width: calc(100% - 5rem);
+  }
+}
+@media (max-width: 1024px) and (orientation: landscape) {
+  .screen--game.active .form__field {
+    width: calc(100% - 9rem);
+  }
+}
+@media (max-width: 768px) and (orientation: landscape) {
+  .screen--game.active .form__field {
+    width: calc(100% - 5rem);
   }
 }
 
