@@ -104,6 +104,8 @@
   transform: translateX(20px);
   transition-duration: 0.5s;
   transition-delay: 500ms;
+  transition-property: all;
+  transition-timing-function: ease;
 
   .screen--story.active .swiper-slide-active &,
   .screen--story.active .swiper-slide-active + .swiper-slide & {

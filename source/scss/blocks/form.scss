@@ -52,6 +52,10 @@
     border: 1px solid $c-purple;
   }
 
+  .screen--game.active & {
+    flex-grow: 1;
+  }
+
   @media (min-width: $stop-scaling) {
     margin-right: 30px;
     padding: 0 56px;
@@ -76,14 +80,16 @@
     height: 4rem;
     font-size: 1.6rem;
   }
-
-  .screen--game.active & {
-    flex-grow: 1;
-  }
 }
 
 .form__button {
   width: 21rem;
+
+  @media (min-width: $stop-scaling) {
+    width: 210px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 
   @media (orientation: portrait) {
     position: relative;
