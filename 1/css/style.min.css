@@ -1466,19 +1466,17 @@ img {
   transition-property: all;
   transition-timing-function: linear;
 }
-.screen--game.active .form__field {
-  width: calc(100% - 24rem);
-  flex-grow: 1;
-}
 .form__field:focus {
   border: 1px solid #a67ee5;
+}
+.screen--game.active .form__field {
+  flex-grow: 1;
 }
 @media (min-width: 2000px) {
   .form__field {
     margin-right: 30px;
     padding: 0 56px;
     height: 60px;
-    width: calc(100% - 210px);
     font-size: 24px;
     border-radius: 30px;
   }
@@ -1487,21 +1485,14 @@ img {
   .form__field {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
-  }
-}
-@media (max-width: 1024px) and (orientation: landscape) {
-  .form__field {
-    width: calc(100% - 9rem);
   }
 }
 @media (max-width: 768px) and (orientation: landscape) {
   .form__field {
     margin-right: 1rem;
     padding: 0 2.5rem;
-    width: calc(100% - 5rem);
     height: 4rem;
     font-size: 1.6rem;
   }
@@ -1509,6 +1500,12 @@ img {
 
 .form__button {
   width: 21rem;
+}
+@media (min-width: 2000px) {
+  .form__button {
+    width: 210px;
+    line-height: 1.5;
+  }
 }
 @media (orientation: portrait) {
   .form__button {
@@ -1834,6 +1831,8 @@ img {
   font-size: 2.4rem;
   line-height: 1.27;
   transition-duration: 0.5s;
+  transition-property: all;
+  transition-timing-function: ease-in;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -3676,6 +3675,8 @@ img {
   transform: translateX(20px);
   transition-duration: 0.5s;
   transition-delay: 500ms;
+  transition-property: all;
+  transition-timing-function: ease;
 }
 .screen--story.active .swiper-slide-active .slider__item-text, .screen--story.active .swiper-slide-active + .swiper-slide .slider__item-text {
   opacity: 1;
@@ -3908,7 +3909,7 @@ img {
   height: 4rem;
   color: #5f458c;
   border-radius: 50%;
-  transition-duration: 0.3s;
+  transition: color 0.3s ease;
 }
 .social-block__toggler:focus {
   outline: none;
@@ -3935,8 +3936,7 @@ img {
   background-color: #ffffff;
   border: 2px solid #ffffff;
   z-index: -1;
-  transition-duration: 0.3s;
-  transition-delay: 0.2s;
+  transition: width 0.3s linear, height 0.3s linear, background-color 0.5s linear, border-color 0.5s linear;
 }
 .social-block__toggler svg {
   position: absolute;
@@ -3946,7 +3946,7 @@ img {
   display: block;
   width: 2.3rem;
   height: 2.2rem;
-  transition-duration: 0.3s;
+  transition: color 0.1s ease;
 }
 .social-block__toggler:hover, .social-block--active .social-block__toggler {
   color: #a67ee5;
@@ -3986,7 +3986,7 @@ img {
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-  transition-duration: 0.3s;
+  transition: all 0.3s ease;
 }
 @media (min-width: 2000px) {
   .social-block__list {
@@ -4054,8 +4054,8 @@ img {
   flex: none;
   margin-bottom: 0.5rem;
   opacity: 0;
-  transform: translateY(8px);
-  transition-duration: 0.3s;
+  transform: translateY(0.5rem);
+  transition: all 0.3s ease;
 }
 @media (min-width: 2000px) {
   .social-block__list li {
@@ -4081,7 +4081,7 @@ img {
   color: #ffffff;
   border: 2px solid transparent;
   border-radius: 50%;
-  transition-duration: 0.3s;
+  transition: all 0.3s ease;
 }
 @media (min-width: 2000px) {
   .social-block__link {
