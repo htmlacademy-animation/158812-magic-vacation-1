@@ -310,6 +310,15 @@
 
 .screen--prizes {
   background-color: $c-dark;
+  opacity: 0;
+
+  &.active {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 1s;
+  }
 }
 
 .screen--game {
