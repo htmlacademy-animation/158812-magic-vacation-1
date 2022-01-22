@@ -3192,6 +3192,14 @@ img {
   bottom: 6rem;
   right: 5.6rem;
 }
+.loaded .rules__link {
+  opacity: 0;
+  animation-name: btnSize, btnText;
+  animation-duration: 0.3s, 0.3s;
+  animation-fill-mode: forwards, both;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0.7s, 0.9s;
+}
 @media (min-width: 2000px) {
   .rules__link {
     bottom: 60px;
@@ -4271,6 +4279,24 @@ img {
 @keyframes textTransform {
   to {
     transform: translateX(0);
+  }
+}
+@keyframes btnSize {
+  0% {
+    opacity: 1;
+    font-size: 0;
+  }
+  100% {
+    opacity: 1;
+    font-size: 2.4rem;
+  }
+}
+@keyframes btnText {
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: #5f458c;
   }
 }
 
