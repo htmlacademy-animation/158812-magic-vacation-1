@@ -1,0 +1,43 @@
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textTransform {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes btnSize {
+  0% {
+    opacity: 1;
+    font-size: 0;
+  }
+
+  100% {
+    opacity: 1;
+    font-size: 2.4rem;
+  }
+}
+
+@keyframes btnText {
+  0% {
+    color: transparent;
+  }
+
+  100% {
+    color: $c-dark;
+  }
+}

@@ -159,6 +159,7 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    transform: scale(0);
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -175,13 +176,52 @@
       line-height: 3rem;
       font-size: 1.4rem;
     }
+
+    .loaded & {
+      animation-name: scaleIn;
+      animation-duration: 300ms;
+      animation-timing-function: cubic-bezier(0.3, 0.5, 0.8, 1.15);
+      animation-fill-mode: forwards;
+    }
   }
 
   p {
     margin: 0;
+    opacity: 0;
+    transform: translateX(3.125rem);
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
+    }
+
+    .loaded & {
+      animation-name: textTransform, fadeIn;
+      animation-duration: 300ms, 700ms;
+      animation-timing-function: cubic-bezier(0.3, 0.5, 0.8, 1.15), ease;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .loaded & {
+    &:nth-child(2) {
+      &:before,
+      p {
+        animation-delay: 200ms;
+      }
+    }
+
+    &:nth-child(3) {
+      &:before,
+      p {
+        animation-delay: 400ms;
+      }
+    }
+
+    &:nth-child(4) {
+      &:before,
+      p {
+        animation-delay: 600ms;
+      }
     }
   }
 }
@@ -190,6 +230,15 @@
   position: absolute;
   bottom: 6rem;
   right: 5.6rem;
+
+  .loaded & {
+    opacity: 0;
+    animation-name: btnSize, btnText;
+    animation-duration: 0.3s, 0.3s;
+    animation-fill-mode: forwards, both;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-delay: 0.7s, 0.9s;
+  }
 
   @media (min-width: $stop-scaling) {
     bottom: 60px;
