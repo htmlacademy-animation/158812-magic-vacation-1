@@ -1,0 +1,28 @@
+.animation-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.3125rem 0 0;
+  overflow: hidden;
+
+  & > span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 1.5em, 0);
+  }
+}
+
+.screen.active .animation-text > span {
+  transform: translate3d(0, 0, 0);
+}
+
+.intro__title > .animation-text {
+  letter-spacing: -0.65rem;
+
+  &:first-child {
+    padding: 2.05rem 0 0;
+  }
+}
+
+.intro__date.show-text > .animation-text > span.text-space {
+  width: 0.75rem;
+}
