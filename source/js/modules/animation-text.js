@@ -57,7 +57,7 @@ export default class AccentTypographyBuild {
         fragment.appendChild(this.createElement(latter, arr.length, numberWord));
         return fragment;
       }, document.createDocumentFragment());
-      const wordContainer = document.createElement(`div`);
+      const wordContainer = document.createElement(`span`);
       wordContainer.classList.add(`animation-text`);
       wordContainer.appendChild(wordElement);
       fragmentParent.appendChild(wordContainer);
@@ -81,3 +81,4 @@ export default class AccentTypographyBuild {
     this._element.classList.remove(this._classForActivate);
   }
 }
+
