@@ -10323,7 +10323,7 @@ class AccentTypographyBuild {
         fragment.appendChild(this.createElement(latter, arr.length, numberWord));
         return fragment;
       }, document.createDocumentFragment());
-      const wordContainer = document.createElement(`div`);
+      const wordContainer = document.createElement(`span`);
       wordContainer.classList.add(`animation-text`);
       wordContainer.appendChild(wordElement);
       fragmentParent.appendChild(wordContainer);
@@ -10347,6 +10347,7 @@ class AccentTypographyBuild {
     this._element.classList.remove(this._classForActivate);
   }
 }
+
 
 
 /***/ }),
@@ -10573,25 +10574,14 @@ class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    if (this.screenElements[this.activeScreen].id === `prizes`) {
-      setTimeout(() => {
-        this.screenElements.forEach((screen) => {
-          screen.classList.add(`screen--hidden`);
-          screen.classList.remove(`active`);
-        });
-        this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-        this.screenElements[this.activeScreen].classList.add(`active`);
-      }, 1000);
-    } else {
-      this.screenElements.forEach((screen) => {
-        screen.classList.add(`screen--hidden`);
-        screen.classList.remove(`active`);
-      });
-      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-      setTimeout(() => {
-        this.screenElements[this.activeScreen].classList.add(`active`);
-      }, 100);
-    }
+    this.screenElements.forEach((screen) => {
+      screen.classList.add(`screen--hidden`);
+      screen.classList.remove(`active`);
+    });
+    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    setTimeout(() => {
+      this.screenElements[this.activeScreen].classList.add(`active`);
+    }, 100);
   }
 
   changeActiveMenuItem() {
@@ -10912,7 +10902,7 @@ window.addEventListener('load', () => {
 const animationIntroTitle = new _modules_animation_text__WEBPACK_IMPORTED_MODULE_9__["default"]('.intro__title', 700, 'show-text', 'transform', false, 0);
 const animationIntroDate = new _modules_animation_text__WEBPACK_IMPORTED_MODULE_9__["default"]('.intro__date', 700, 'show-text', 'transform', true, 700);
 const animationHistoryTitle = new _modules_animation_text__WEBPACK_IMPORTED_MODULE_9__["default"]('.slider__item-title', 700, 'show-text', 'transform', true, 0);
-const animationPrizesTitle = new _modules_animation_text__WEBPACK_IMPORTED_MODULE_9__["default"]('.prizes__title', 700, 'show-text', 'transform', true, 0);
+const animationPrizesTitle = new _modules_animation_text__WEBPACK_IMPORTED_MODULE_9__["default"]('.prizes__title', 700, 'show-text', 'transform', true, 1000);
 
 
 /***/ }),
