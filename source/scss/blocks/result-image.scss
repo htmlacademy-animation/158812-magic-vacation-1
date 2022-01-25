@@ -1,0 +1,96 @@
+.result-image {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+}
+
+.result-image__group {
+  //position: relative;
+
+  &--2 {
+    .result-image {
+      position: absolute;
+      height: auto;
+      object-fit: contain;
+
+      &--1 {
+        z-index: 1;
+        max-width: 25rem;
+        bottom: 17.575rem;
+        left: calc(50% + 2.5rem);
+      }
+
+      &--2 {
+        z-index: 1;
+        max-width: 27rem;
+        bottom: 11.25rem;
+        left: calc(50% - 30rem);
+      }
+
+      &--3 {
+        z-index: 2;
+        max-width: 26rem;
+        bottom: 16rem;
+        left: calc(50% + 2.05rem);
+      }
+
+      &--4 {
+        z-index: 3;
+        max-width: 30rem;
+        bottom: -5rem;
+        left: calc(50% - 18rem);
+      }
+
+      &--5 {
+        z-index: 3;
+        max-width: 25rem;
+        bottom: -4rem;
+        left: calc(50% - 22rem);
+      }
+
+      .screen--show & {
+        &--1 {
+          animation-name: ShowLeaf-1;
+          animation-duration: 1.8s;
+          animation-fill-mode: both;
+          animation-timing-function: ease-in-out;
+          animation-delay: 0.5s;
+        }
+
+        &--2 {
+          animation-name: ShowLeaf-2;
+          animation-duration: 2s;
+          animation-fill-mode: both;
+          animation-timing-function: ease-in-out;
+          animation-delay: 0.5s;
+        }
+
+        &--3 {
+          animation-name: showGreen;
+          animation-duration: 1.5s;
+          animation-fill-mode: both;
+          animation-timing-function: ease-in-out;
+          animation-delay: 0.6s;
+        }
+
+        &--4 {
+          animation-name: showSuitcase;
+          animation-duration: 0.7s;
+          animation-fill-mode: both;
+          animation-timing-function: ease-in-out;
+          animation-delay: 0.5s;
+        }
+
+        &--5 {
+          animation-name: showFlamingo, moveFlamingo;
+          animation-duration: 0.4s, 1.5s;
+          animation-fill-mode: both, forwards;
+          animation-timing-function: ease-in-out, ease-in-out;
+          animation-delay: 0.4s, 0.8s;
+          animation-iteration-count: 1, infinite;
+          animation-direction: normal, alternate;
+        }
+      }
+    }
+  }
+}
