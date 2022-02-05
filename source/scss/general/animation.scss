@@ -41,3 +41,138 @@
     color: $c-dark;
   }
 }
+
+@keyframes ShowLeaf-1 {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  40% {
+    transform: rotate(-15deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: rotate(10deg);
+  }
+
+  80% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes ShowLeaf-2 {
+  0% {
+    opacity: 0;
+    transform: rotate(25deg);
+  }
+
+  20% {
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    transform: rotate(15deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
+
+  80% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes showGreen {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: rotate(3deg);
+  }
+
+  80% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes showSuitcase {
+  0% {
+    transform: translateY(1.375rem) scale(0);
+  }
+
+  50% {
+    transform: translateY(-16.75rem) scale(1.1);
+  }
+
+  100% {
+    transform: translateY(-15.625rem) scale(1);
+  }
+}
+
+@keyframes showFlamingo {
+  0% {
+    opacity: 0;
+    transform: translateY(4.375rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-15.625rem);
+  }
+}
+
+@keyframes moveFlamingo {
+  from {
+    transform: rotate(0) translate(0, -15.625rem);
+  }
+
+  to {
+    transform: rotate(-3deg) translate(-0.25rem, -13.125rem);
+  }
+}
+
+@keyframes showInputField {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    width: calc(100% - 31rem);
+  }
+}
