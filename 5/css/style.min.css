@@ -1038,6 +1038,113 @@ img {
     color: #5f458c;
   }
 }
+@keyframes ShowLeaf-1 {
+  0% {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes ShowLeaf-2 {
+  0% {
+    opacity: 0;
+    transform: rotate(25deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(15deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes showGreen {
+  0% {
+    opacity: 0;
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    opacity: 1;
+    transform: rotate(3deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes showSuitcase {
+  0% {
+    transform: translateY(1.375rem) scale(0);
+  }
+  50% {
+    transform: translateY(-16.75rem) scale(1.1);
+  }
+  100% {
+    transform: translateY(-15.625rem) scale(1);
+  }
+}
+@keyframes showFlamingo {
+  0% {
+    opacity: 0;
+    transform: translateY(4.375rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-15.625rem);
+  }
+}
+@keyframes moveFlamingo {
+  from {
+    transform: rotate(0) translate(0, -15.625rem);
+  }
+  to {
+    transform: rotate(-3deg) translate(-0.25rem, -13.125rem);
+  }
+}
+@keyframes showInputField {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    width: calc(100% - 31rem);
+  }
+}
 .animation-screen {
   position: fixed;
   display: flex;
@@ -1617,7 +1724,19 @@ img {
 }
 
 .form--result .form__field {
-  width: calc(100% - 31rem);
+  width: 0;
+  animation-name: showInputField;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+}
+.form--result .form__field::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease 1.2s;
+}
+.screen--show .form--result .form__field::placeholder {
+  opacity: 1;
 }
 @media (min-width: 2000px) {
   .form--result .form__field {
@@ -1771,7 +1890,6 @@ img {
   left: 0;
   z-index: 100;
   opacity: 0.5;
-  display: none;
 }
 
 .game__button {
@@ -4319,13 +4437,91 @@ img {
 .intro__title .animation-text:first-child {
   padding: 2.05rem 0 0;
 }
-
 .screen.active .animation-text span {
   transform: translate3d(0, 0, 0);
 }
 
 .intro__date .animation-text {
   letter-spacing: -0.1rem;
+}
+
+.result-image {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+}
+
+.result-image__group--2 .result-image {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+}
+.result-image__group--2 .result-image--1 {
+  z-index: 1;
+  max-width: 27rem;
+  bottom: 15rem;
+  left: calc(50% + 0.5rem);
+}
+.result-image__group--2 .result-image--2 {
+  z-index: 1;
+  max-width: 27rem;
+  bottom: 11.25rem;
+  left: calc(50% - 33rem);
+}
+.result-image__group--2 .result-image--3 {
+  z-index: 2;
+  max-width: 26rem;
+  bottom: 16rem;
+  left: calc(50% + 2.05rem);
+}
+.result-image__group--2 .result-image--4 {
+  z-index: 3;
+  max-width: 29rem;
+  bottom: -5rem;
+  left: calc(50% - 18rem);
+}
+.result-image__group--2 .result-image--5 {
+  z-index: 3;
+  max-width: 25rem;
+  bottom: -4rem;
+  left: calc(50% - 22rem);
+}
+.screen--show .result-image__group--2 .result-image--1 {
+  animation-name: ShowLeaf-1;
+  animation-duration: 1.8s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+}
+.screen--show .result-image__group--2 .result-image--2 {
+  animation-name: ShowLeaf-2;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+}
+.screen--show .result-image__group--2 .result-image--3 {
+  animation-name: showGreen;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.6s;
+}
+.screen--show .result-image__group--2 .result-image--4 {
+  animation-name: showSuitcase;
+  animation-duration: 0.7s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+}
+.screen--show .result-image__group--2 .result-image--5 {
+  animation-name: showFlamingo, moveFlamingo;
+  animation-duration: 0.4s, 1.5s;
+  animation-fill-mode: both, forwards;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-delay: 0.4s, 0.8s;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
 }
 
 /*# sourceMappingURL=style.min.css.map*/
