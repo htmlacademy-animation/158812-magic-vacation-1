@@ -161,3 +161,18 @@
     transform: rotate(-3deg) translate(-0.25rem, -13.125rem);
   }
 }
+
+@keyframes showInputField {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    width: calc(100% - 31rem);
+  }
+}
