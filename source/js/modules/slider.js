@@ -9,6 +9,14 @@ export default () => {
 
     const body = document.body;
 
+    const addActiveTheme = function (name) {
+      body.classList.remove('dark-blue');
+      body.classList.remove('light-blue');
+      body.classList.remove('dark-purple');
+      body.classList.remove('light-purple');
+      body.classList.add(name);
+    };
+
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
         pagination: {
@@ -56,20 +64,16 @@ export default () => {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
-              body.classList.remove(`dark-blue`, `light-blue`, `dark-purple`);
-              body.classList.add(`light-purple`);
+              addActiveTheme('light-purple');
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
-              body.classList.remove(`dark-blue`, `dark-purple`, `light-purple`);
-              body.classList.add(`light-blue`);
+              addActiveTheme('light-blue');
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
-              body.classList.remove(`light-blue`, `dark-purple`, `light-purple`);
-              body.classList.add(`dark-blue`);
+              addActiveTheme('dark-blue');
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
-              body.classList.add(`dark-purple`);
-              body.classList.remove(`dark-blue`, `light-blue`, `light-purple`);
+              addActiveTheme('dark-purple');
             }
           },
           resize: () => {
