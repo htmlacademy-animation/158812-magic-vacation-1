@@ -176,3 +176,23 @@
     width: calc(100% - 31rem);
   }
 }
+
+@keyframes moveControlLeft {
+  0% {
+    transform: translateX(-80px) rotate(-220deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes moveControlRight {
+  0% {
+    transform: translateX(80px) rotate(220deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
