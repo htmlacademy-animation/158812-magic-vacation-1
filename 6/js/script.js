@@ -10645,6 +10645,12 @@ __webpack_require__.r(__webpack_exports__);
 
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener(`click`, function () {
+      document.body.classList.remove(`dark-blue`, `light-blue`, `light-purple`, `dark-purple`);
+
+      if (this.dataset.href === `story`) {
+        document.body.classList.add(`light-purple`);
+      }
+
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
@@ -10753,6 +10759,14 @@ __webpack_require__.r(__webpack_exports__);
 
     const body = document.body;
 
+    const addActiveTheme = function (name) {
+      body.classList.remove('dark-blue');
+      body.classList.remove('light-blue');
+      body.classList.remove('dark-purple');
+      body.classList.remove('light-purple');
+      body.classList.add(name);
+    };
+
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](`.js-slider`, {
         pagination: {
@@ -10766,12 +10780,16 @@ __webpack_require__.r(__webpack_exports__);
           slideChange: () => {
             if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
+              addActiveTheme('light-purple');
             } else if (storySlider.activeIndex === 2 || storySlider.activeIndex === 3) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg"), linear-gradient(180deg, rgba(45, 54, 179, 0) 0%, #2A34B0 16.85%)`;
+              addActiveTheme('light-blue');
             } else if (storySlider.activeIndex === 4 || storySlider.activeIndex === 5) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg"), linear-gradient(180deg, rgba(92, 138, 198, 0) 0%, #5183C4 16.85%)`;
+              addActiveTheme('dark-blue');
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
+              addActiveTheme('dark-purple');
             }
           },
           resize: () => {
@@ -10800,20 +10818,16 @@ __webpack_require__.r(__webpack_exports__);
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
-              body.classList.remove(`dark-blue`, `light-blue`, `dark-purple`);
-              body.classList.add(`light-purple`);
+              addActiveTheme('light-purple');
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
-              body.classList.remove(`dark-blue`, `dark-purple`, `light-purple`);
-              body.classList.add(`light-blue`);
+              addActiveTheme('light-blue');
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
-              body.classList.remove(`light-blue`, `dark-purple`, `light-purple`);
-              body.classList.add(`dark-blue`);
+              addActiveTheme('dark-blue');
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
-              body.classList.add(`dark-purple`);
-              body.classList.remove(`dark-blue`, `light-blue`, `light-purple`);
+              addActiveTheme('dark-purple');
             }
           },
           resize: () => {
