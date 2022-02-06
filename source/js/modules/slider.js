@@ -6,6 +6,9 @@ export default () => {
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
 
   const setSlider = function () {
+
+    const body = document.body;
+
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
         pagination: {
@@ -53,12 +56,20 @@ export default () => {
           slideChange: () => {
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
+              body.classList.remove(`dark-blue`, `light-blue`, `dark-purple`);
+              body.classList.add(`light-purple`);
             } else if (storySlider.activeIndex === 2) {
               sliderContainer.style.backgroundImage = `url("img/slide2.jpg")`;
+              body.classList.remove(`dark-blue`, `dark-purple`, `light-purple`);
+              body.classList.add(`light-blue`);
             } else if (storySlider.activeIndex === 4) {
               sliderContainer.style.backgroundImage = `url("img/slide3.jpg")`;
+              body.classList.remove(`light-blue`, `dark-purple`, `light-purple`);
+              body.classList.add(`dark-blue`);
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
+              body.classList.add(`dark-purple`);
+              body.classList.remove(`dark-blue`, `light-blue`, `light-purple`);
             }
           },
           resize: () => {

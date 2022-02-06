@@ -29,7 +29,6 @@ export default () => {
           screenBackground.classList.remove(`screen-background--active`);
         }, 1000);
       }
-
     });
   }
 
