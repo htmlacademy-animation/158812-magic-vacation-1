@@ -116,6 +116,22 @@
   line-height: 1.2;
   color: $c-light;
 
+  .screen--result.screen--show & {
+    animation-name: showBtnPlay;
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+
+    span {
+      animation-name: moveBtnPlayRound;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+      animation-delay: 1s;
+    }
+  }
+
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
     min-width: 340px;
