@@ -28,11 +28,11 @@
   }
 
   body.light-blue & {
-    color: $light-blue;
+    color: $dark-blue;
   }
 
   body.dark-blue & {
-    color: $dark-blue;
+    color: $light-blue;
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -50,10 +50,9 @@
     height: 100%;
     border-radius: 50%;
     background-color: $c-light;
-    border: 2px solid $c-light;
     z-index: -1;
     transform: translate(-50%, -50%) scale(0.65);
-    transition: transform 0.3s, background-color 0.5s, border-color 0.5s;
+    transition: transform 0.3s, background-color 0.5s;
     transition-timing-function: cubic-bezier(0.4, 1.1, 0.85, 0.9);
 
     .loaded & {
@@ -71,22 +70,47 @@
 
   &:hover,
   .social-block--active & {
-    color: $c-purple;
-
-    &::before {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
+    background-color: $c-purple;
+    border-color: $c-purple;
+    color: $c-light;
 
     body.light-purple & {
-      color: $c-dark;
+      color: $c-light;
+      background-color: $c-dark;
+      border-color: $c-dark;
     }
 
     body.light-blue & {
-      color: $light-blue;
+      color: $c-light;
+      background-color: $light-blue;
+      border-color: $light-blue;
     }
 
     body.dark-blue & {
-      color: $dark-blue;
+      color: $c-light;
+      background-color: $dark-blue;
+      border-color: $dark-blue;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1.1);
+      border-color: $c-purple;
+      background-color: $c-purple;
+
+      body.light-purple & {
+        background-color: $c-dark;
+        border-color: $c-dark;
+      }
+
+      body.light-blue & {
+        background-color: $light-blue;
+        border-color: $light-blue;
+      }
+
+      body.dark-blue & {
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+      }
     }
   }
 

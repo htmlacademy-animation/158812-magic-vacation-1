@@ -190,11 +190,11 @@
   }
 
   body.light-blue & {
-    color: $light-blue;
+    color: $dark-blue;
   }
 
   body.dark-blue & {
-    color: $dark-blue;
+    color: $light-blue;
   }
 
   .screen--story.active & {
@@ -258,11 +258,11 @@
     }
 
     body.light-blue & {
-      color: $light-blue;
+      color: $dark-blue;
     }
 
     body.dark-blue & {
-      color: $dark-blue;
+      color: $light-blue;
     }
   }
 
@@ -314,11 +314,11 @@
     }
 
     body.light-blue & {
-      color: $dark-blue;
+      color: $light-blue;
     }
 
     body.dark-blue & {
-      color: $light-blue;
+      color: $dark-blue;
     }
   }
 
