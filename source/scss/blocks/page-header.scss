@@ -300,12 +300,36 @@
       color: $c-purple;
       outline: none;
 
+      body.light-purple & {
+        color: $c-dark;
+      }
+
+      body.light-blue & {
+        color: $light-blue;
+      }
+
+      body.dark-blue & {
+        color: $dark-blue;
+      }
+
       &::after {
         opacity: 1;
         background-color: $c-purple;
         width: 100%;
         right: auto;
         left: 0;
+
+        body.light-purple & {
+          background-color: $c-dark;
+        }
+
+        body.light-blue & {
+          background-color: $light-blue;
+        }
+
+        body.dark-blue & {
+          background-color: $dark-blue;
+        }
       }
     }
   }

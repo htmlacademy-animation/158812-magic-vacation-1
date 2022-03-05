@@ -182,7 +182,38 @@
   position: relative;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: $c-purple;
+  transition: all 0.3s ease;
+
+  body.light-purple & {
+    color: $c-dark;
+  }
+
+  body.light-blue & {
+    color: $dark-blue;
+  }
+
+  body.dark-blue & {
+    color: $light-blue;
+  }
+
+  .screen--story.active & {
+    opacity: 1;
+
+    &.slider__control--prev {
+      animation-name: moveControlLeft;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+    }
+
+    &.slider__control--next {
+      animation-name: moveControlRight;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -198,6 +229,7 @@
     border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+    transition: all 0.3s ease;
   }
 
   svg {
@@ -220,6 +252,18 @@
       width: 112.5%;
       height: 112.5%;
     }
+
+    body.light-purple & {
+      color: $c-dark;
+    }
+
+    body.light-blue & {
+      color: $dark-blue;
+    }
+
+    body.dark-blue & {
+      color: $light-blue;
+    }
   }
 
   &:focus {
@@ -228,6 +272,30 @@
 
     &::before {
       border-color: $c-purple;
+
+      body.light-purple & {
+        border-color: $c-dark;
+      }
+
+      body.light-blue & {
+        border-color: $dark-blue;
+      }
+
+      body.dark-blue & {
+        border-color: $light-blue;
+      }
+    }
+
+    body.light-purple & {
+      color: $c-dark;
+    }
+
+    body.light-blue & {
+      color: $dark-blue;
+    }
+
+    body.dark-blue & {
+      color: $light-blue;
     }
   }
 
@@ -238,8 +306,19 @@
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: $c-light;
+    }
+
+    body.light-purple & {
+      color: $c-dark;
+    }
+
+    body.light-blue & {
+      color: $light-blue;
+    }
+
+    body.dark-blue & {
+      color: $dark-blue;
     }
   }
 

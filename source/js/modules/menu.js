@@ -18,6 +18,12 @@ export default () => {
 
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].addEventListener(`click`, function () {
+      document.body.classList.remove(`dark-blue`, `light-blue`, `light-purple`, `dark-purple`);
+
+      if (this.dataset.href === `story`) {
+        document.body.classList.add(`light-purple`);
+      }
+
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
@@ -29,7 +35,6 @@ export default () => {
           screenBackground.classList.remove(`screen-background--active`);
         }, 1000);
       }
-
     });
   }
 
