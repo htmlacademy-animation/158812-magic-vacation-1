@@ -7,6 +7,7 @@ import chat from './modules/chat.js';
 import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
+import prizes from './modules/prizes.js';
 import FullPageScroll from './modules/full-page-scroll.js';
 import AccentTypographyBuild from './modules/animation-text.js';
 
@@ -19,6 +20,7 @@ chat();
 result();
 form();
 social();
+prizes();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
@@ -31,20 +33,3 @@ const animationIntroTitle = new AccentTypographyBuild(`.intro__title`, 700, `sho
 const animationIntroDate = new AccentTypographyBuild(`.intro__date`, 700, `show-text`, `transform`, true, 700);
 const animationHistoryTitle = new AccentTypographyBuild(`.slider__item-title`, 700, `show-text`, `transform`, true, 0);
 const animationPrizesTitle = new AccentTypographyBuild(`.prizes__title`, 700, `show-text`, `transform`, true, 1000);
-
-function animationStarting() {
-  switch (document.location.hash) {
-    case `#prizes`:
-      const svg = document.getElementById(`primaryAnimation`);
-      const animation = document.getElementById(`airshipSceneFadeOutAnimation`);
-      if (svg && animation) {
-        animation.endElement();
-        svg.setCurrentTime(0);
-        animation.beginElement();
-      }
-      break;
-    default:
-      break;
-  }
-}
-animationStarting();
