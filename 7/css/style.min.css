@@ -1177,6 +1177,17 @@ img {
     opacity: 1;
   }
 }
+@keyframes movePrimaryPrize {
+  0% {
+    transform: translateX(100%);
+  }
+  80% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .animation-screen {
   position: fixed;
   display: flex;
@@ -2640,6 +2651,9 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
     margin-left: 5rem;
   }
 }
+.prizes__item--journeys {
+  transform: translateX(100%);
+}
 .prizes__item--journeys .prizes__icon {
   position: relative;
   left: -5.9rem;
@@ -2671,8 +2685,14 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
     width: 10rem;
   }
 }
+.active .prizes__item--journeys {
+  animation-name: movePrimaryPrize;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
 .prizes__item--cases {
   margin-left: 7rem;
+  opacity: 0;
 }
 @media (min-width: 2000px) {
   .prizes__item--cases {
@@ -2709,6 +2729,15 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
     width: 7rem;
   }
 }
+.active .prizes__item--cases {
+  animation-name: fadeIn;
+  animation-delay: 6s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.prizes__item--codes {
+  opacity: 0;
+}
 @media (max-width: 1024px) and (orientation: portrait) {
   .prizes__item--codes {
     padding-left: 0.8rem;
@@ -2737,13 +2766,20 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
     width: 10rem;
   }
 }
+.active .prizes__item--codes {
+  animation-name: fadeIn;
+  animation-delay: 6s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
 
 @media (max-width: 1024px) and (orientation: portrait) {
   .prizes__icon {
     margin-right: 3.8rem;
   }
 }
-.prizes__icon img {
+.prizes__icon img,
+.prizes__icon object {
   display: block;
   width: 100%;
   height: auto;
