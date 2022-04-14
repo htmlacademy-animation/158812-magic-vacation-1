@@ -81,4 +81,3 @@ export default class AccentTypographyBuild {
     this._element.classList.remove(this._classForActivate);
   }
 }
-

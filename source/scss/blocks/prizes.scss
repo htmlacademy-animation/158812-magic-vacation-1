@@ -127,6 +127,8 @@
   }
 
   &--journeys {
+    transform: translateX(100%);
+
     .prizes__icon {
       position: relative;
       left: -5.9rem;
@@ -154,10 +156,17 @@
         width: 10rem;
       }
     }
+
+    .active & {
+      animation-name: movePrimaryPrize;
+      animation-duration: 6s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &--cases {
     margin-left: 7rem;
+    opacity: 0;
 
     @media (min-width: $stop-scaling) {
       margin-left: 70px;
@@ -188,9 +197,18 @@
         width: 7rem;
       }
     }
+
+    .active & {
+      animation-name: fadeIn;
+      animation-delay: 6s;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &--codes {
+    opacity: 0;
+
     @media (max-width: $tablet) and (orientation: portrait) {
       padding-left: 0.8rem;
     }
@@ -213,6 +231,13 @@
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 10rem;
       }
+    }
+
+    .active & {
+      animation-name: fadeIn;
+      animation-delay: 6s;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
     }
   }
 }
