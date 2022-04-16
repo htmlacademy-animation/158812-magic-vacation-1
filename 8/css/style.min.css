@@ -2702,7 +2702,7 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
 @media (max-width: 1024px) and (orientation: portrait) {
   .prizes__item--cases {
     margin-left: 0;
-    padding-left: 1.5rem;
+    padding-left: 0;
   }
 }
 .prizes__item--cases .prizes__icon {
@@ -2730,8 +2730,8 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
   }
 }
 .prizes__item--cases .prizes__image {
-  margin-left: -8vw;
-  max-width: 140%;
+  margin-left: -6vw;
+  max-width: 120%;
 }
 .active .prizes__item--cases {
   animation-name: fadeIn;
