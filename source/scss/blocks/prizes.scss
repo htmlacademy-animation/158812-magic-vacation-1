@@ -198,6 +198,11 @@
       }
     }
 
+    .prizes__image {
+      margin-left: -8vw;
+      max-width: 140%;
+    }
+
     .active & {
       animation-name: fadeIn;
       animation-delay: 6s;
@@ -235,7 +240,7 @@
 
     .active & {
       animation-name: fadeIn;
-      animation-delay: 6s;
+      animation-delay: 15s;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
@@ -250,7 +255,7 @@
   img,
   object {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }

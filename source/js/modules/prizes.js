@@ -5,4 +5,11 @@ export default () => {
   primaryPrize.addEventListener(`animationstart`, () => {
     primaryPrizeImage.data = primaryPrizeImage.dataset.src;
   });
+
+  const secondaryPrize = document.querySelector(`.prizes__item--cases`);
+  const secondaryPrizeImage = secondaryPrize.querySelector(`.prizes__image`);
+
+  secondaryPrize.addEventListener(`animationstart`, () => {
+    secondaryPrizeImage.data = secondaryPrizeImage.dataset.src;
+  });
 };
