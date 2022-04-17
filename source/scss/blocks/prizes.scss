@@ -174,7 +174,7 @@
 
     @media (max-width: $tablet) and (orientation: portrait) {
       margin-left: 0;
-      padding-left: 1.5rem;
+      padding-left: 0;
     }
 
     .prizes__icon {
@@ -196,6 +196,11 @@
       @media (max-width: $mobile) and (orientation: landscape) {
         width: 7rem;
       }
+    }
+
+    .prizes__image {
+      margin-left: -6vw;
+      max-width: 120%;
     }
 
     .active & {
@@ -235,7 +240,7 @@
 
     .active & {
       animation-name: fadeIn;
-      animation-delay: 6s;
+      animation-delay: 15s;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
@@ -250,7 +255,7 @@
   img,
   object {
     display: block;
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 }
