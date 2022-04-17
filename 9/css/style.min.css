@@ -2769,7 +2769,7 @@ body.dark-blue .page-header__menu a:hover::after, body.dark-blue .page-header__m
 }
 .active .prizes__item--codes {
   animation-name: fadeIn;
-  animation-delay: 15s;
+  animation-delay: 13s;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
