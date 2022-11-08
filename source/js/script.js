@@ -10,6 +10,7 @@ import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll.js';
 import AccentTypographyBuild from './modules/animation-text.js';
 import prizes from './modules/prizes.js';
+import GameScreen from './modules/game-screen.js';
 
 // init modules
 mobileHeight();
@@ -28,6 +29,9 @@ fullPageScroll.init();
 window.addEventListener(`load`, () => {
   document.body.classList.add(`loaded`);
 });
+
+const gameScreen = new GameScreen();
+gameScreen.init();
 
 const animationIntroTitle = new AccentTypographyBuild(`.intro__title`, 700, `show-text`, `transform`, false, 0);
 const animationIntroDate = new AccentTypographyBuild(`.intro__date`, 700, `show-text`, `transform`, true, 700);
