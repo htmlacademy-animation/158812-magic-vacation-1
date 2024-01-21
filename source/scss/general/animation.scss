@@ -240,3 +240,9 @@
     transform: scale(1);
   }
 }
+
+@keyframes showElement {
+  to {
+    opacity: 1;
+  }
+}
